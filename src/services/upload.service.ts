@@ -1,4 +1,5 @@
 import cloudinaryV2 from '../config/upload.config';
+import logger from '../helpers/logger';
 
 class Service {
   async uploadFileToCloudinary(dataURI: string, options: object) {
@@ -7,7 +8,7 @@ class Service {
 
       return cldRes;
     } catch (error: any) {
-      console.log(error);
+      logger.error(error);
 
       return false;
     }

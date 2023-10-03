@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { BadRequestResponse, SuccessResponse } from '../helpers/response';
+import { BadRequestResponse, InternalErrorResponse, SuccessResponse } from '../helpers/response';
 import { uploadService } from '../services';
 
 async function processImage(
@@ -22,6 +22,8 @@ async function processImage(
       return BadRequestResponse(res, 'Image size exceeds limit of 100kb');
 
     const cldRes = await uploadService.uploadFileToCloudinary(dataURI, options);
+
+    if (!cldRes) return InternalErrorResponse(res, 'Unable to process image');
 
     return SuccessResponse(res, cldRes);
   }

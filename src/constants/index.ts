@@ -1,17 +1,20 @@
 import dotenv from 'dotenv';
 dotenv.config({ path: './.env' });
 // export const CORS_ORIGIN = process.env.CORS_ORIGIN || 'http://localhost:3000';
+export const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET || 'access-token-secret';
+export const APP_NAME = process.env.APP_NAME || 'app';
+export const CLOUDINARY_API_KEY = process.env.CLOUDINARY_API_KEY;
+export const CLOUDINARY_API_SECRET = process.env.CLOUDINARY_API_SECRET;
+export const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME;
 export const CORS_ORIGIN = process.env.CORS_ORIGIN || '*';
-export const DB_NAME = process.env.MONGO_DB_NAME || 'automated-salary-payment';
+export const DB_NAME = process.env.MONGO_DB_NAME || 'simple-image-processing';
 export const DB_CONNECTION_STRING =
   process.env.MONGO_DB_URL + DB_NAME || 'mongodb://localhost:27017/' + DB_NAME;
-export const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET || 'access-token-secret';
-export const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET || 'refresh-token-secret';
 export const JWT_SECRET = process.env.JWT_SECRET || 'jwt-secret';
-export const APP_NAME = process.env.APP_NAME || 'app';
-export const SITE_LINK = process.env.SITE_LINK || 'http://localhost:5000';
 export const MAIL_ADDRESS = process.env.MAIL_ADDRESS || 'michaelorji@mail.com';
 export const MAIL_PASSWORD = process.env.MAIL_PASSWORD || 'xxxx';
+export const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET || 'refresh-token-secret';
+export const SITE_LINK = process.env.SITE_LINK || 'http://localhost:5000';
 
 export const STATUS_CODES = {
   SUCCESS: '10000',
@@ -59,7 +62,7 @@ export const MESSAGES = {
 export const LINKS = {
   API_DOCUMENTATION:
     process.env.API_DOCUMENTATION_URL ||
-    'https://documenter.getpostman.com/view/29278179/2s9YJaYimq',
+    'https://documenter.getpostman.com/view/29278179/2s9YJc34Do',
   EMAIL: 'mailto:app@mail.online',
   GOOGLE_MEET: 'https://meet.google.com',
   PHONE_CALL: 'tel:+2349999999999',
